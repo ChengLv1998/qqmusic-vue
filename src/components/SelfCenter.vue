@@ -65,6 +65,9 @@ export default {
     clickRight() {
       this.$emit('b')
     },
+    fn() {
+      console.log()
+    }
   },
 };
 </script>

@@ -50,6 +50,9 @@ export default {
         this.audio.play()
       }
     },
+    fn() {
+      console.log()
+    }
   },
 };
 </script>

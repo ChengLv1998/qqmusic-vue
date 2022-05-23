@@ -10,101 +10,99 @@
       </div>
     </div>
     <div class="bottom">
-      <div class="box">
-        <div class="box-item">
-          <div class="item">
-            <div class="bottom-left">
-              <img :src="picture" alt="" />
-              <div class="text">
-                <div class="text-top">
-                  <span class="name">{{ name }}</span>
-                  <span class="fa" :class="icon3"></span>
-                </div>
-                <div class="text-bottom">{{ textName }}</div>
+      <div class="box-item">
+        <div class="item">
+          <div class="bottom-left">
+            <img :src="picture" alt="" />
+            <div class="text">
+              <div class="text-top">
+                <span class="name">{{ name }}</span>
+                <span class="fa" :class="icon3"></span>
               </div>
-            </div>
-            <div class="bottom-right">
-              <span class="fa" :class="icon4"></span>
+              <div class="text-bottom">{{ textName }}</div>
             </div>
           </div>
-          <div class="item">
-            <div class="bottom-left">
-              <img :src="picture" alt="" />
-              <div class="text">
-                <div class="text-top">
-                  <span class="name">{{ name }}</span>
-                  <span class="fa" :class="icon3"></span>
-                </div>
-                <div class="text-bottom">{{ textName }}</div>
-              </div>
-            </div>
-            <div class="bottom-right">
-              <span class="fa" :class="icon4"></span>
-            </div>
+          <div class="bottom-right">
+            <span class="fa" :class="icon4"></span>
           </div>
         </div>
-        <div class="box-item">
-          <div class="item">
-            <div class="bottom-left">
-              <img :src="picture" alt="" />
-              <div class="text">
-                <div class="text-top">
-                  <span class="name">{{ name }}</span>
-                  <span class="fa" :class="icon3"></span>
-                </div>
-                <div class="text-bottom">{{ textName }}</div>
+        <div class="item">
+          <div class="bottom-left">
+            <img :src="picture" alt="" />
+            <div class="text">
+              <div class="text-top">
+                <span class="name">{{ name }}</span>
+                <span class="fa" :class="icon3"></span>
               </div>
-            </div>
-            <div class="bottom-right">
-              <span class="fa" :class="icon4"></span>
+              <div class="text-bottom">{{ textName }}</div>
             </div>
           </div>
-          <div class="item">
-            <div class="bottom-left">
-              <img :src="picture" alt="" />
-              <div class="text">
-                <div class="text-top">
-                  <span class="name">{{ name }}</span>
-                  <span class="fa" :class="icon3"></span>
-                </div>
-                <div class="text-bottom">{{ textName }}</div>
-              </div>
-            </div>
-            <div class="bottom-right">
-              <span class="fa" :class="icon4"></span>
-            </div>
+          <div class="bottom-right">
+            <span class="fa" :class="icon4"></span>
           </div>
         </div>
-        <div class="box-item">
-          <div class="item">
-            <div class="bottom-left">
-              <img :src="picture" alt="" />
-              <div class="text">
-                <div class="text-top">
-                  <span class="name">{{ name }}</span>
-                  <span class="fa" :class="icon3"></span>
-                </div>
-                <div class="text-bottom">{{ textName }}</div>
+      </div>
+      <div class="box-item">
+        <div class="item">
+          <div class="bottom-left">
+            <img :src="picture" alt="" />
+            <div class="text">
+              <div class="text-top">
+                <span class="name">{{ name }}</span>
+                <span class="fa" :class="icon3"></span>
               </div>
-            </div>
-            <div class="bottom-right">
-              <span class="fa" :class="icon4"></span>
+              <div class="text-bottom">{{ textName }}</div>
             </div>
           </div>
-          <div class="item">
-            <div class="bottom-left">
-              <img :src="picture" alt="" />
-              <div class="text">
-                <div class="text-top">
-                  <span class="name">{{ name }}</span>
-                  <span class="fa" :class="icon3"></span>
-                </div>
-                <div class="text-bottom">{{ textName }}</div>
+          <div class="bottom-right">
+            <span class="fa" :class="icon4"></span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="bottom-left">
+            <img :src="picture" alt="" />
+            <div class="text">
+              <div class="text-top">
+                <span class="name">{{ name }}</span>
+                <span class="fa" :class="icon3"></span>
               </div>
+              <div class="text-bottom">{{ textName }}</div>
             </div>
-            <div class="bottom-right">
-              <span class="fa" :class="icon4"></span>
+          </div>
+          <div class="bottom-right">
+            <span class="fa" :class="icon4"></span>
+          </div>
+        </div>
+      </div>
+      <div class="box-item">
+        <div class="item">
+          <div class="bottom-left">
+            <img :src="picture" alt="" />
+            <div class="text">
+              <div class="text-top">
+                <span class="name">{{ name }}</span>
+                <span class="fa" :class="icon3"></span>
+              </div>
+              <div class="text-bottom">{{ textName }}</div>
             </div>
+          </div>
+          <div class="bottom-right">
+            <span class="fa" :class="icon4"></span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="bottom-left">
+            <img :src="picture" alt="" />
+            <div class="text">
+              <div class="text-top">
+                <span class="name">{{ name }}</span>
+                <span class="fa" :class="icon3"></span>
+              </div>
+              <div class="text-bottom">{{ textName }}</div>
+            </div>
+          </div>
+          <div class="bottom-right">
+            <span class="fa" :class="icon4"></span>
           </div>
         </div>
       </div>
@@ -167,26 +165,26 @@ export default {
     }
   }
   .bottom {
-      overflow-x: auto;
-    .box {
-      display: flex;
-      .box-item {
-        width: 200px;
-        height: 200px;
-        .item {
+    overflow-x: auto;
+    height: 150px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .box-item {
+      margin: 0 10px;
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        margin-bottom: 10px;
+        .bottom-left {
           display: flex;
-          justify-content: space-between;
           align-items: center;
-          font-size: 14px;
-          margin-bottom: 10px;
-          .bottom-left {
-            display: flex;
-            align-items: center;
-            img {
-              width: 50px;
-              border-radius: 6px;
-              margin-right: 10px;
-            }
+          img {
+            width: 50px;
+            border-radius: 6px;
+            margin-right: 10px;
           }
         }
       }

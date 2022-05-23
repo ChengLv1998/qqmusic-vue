@@ -9,7 +9,7 @@
       <i class="fa fa-play-circle-o" @click="play"></i>
       <i class="fa fa-bars"></i>
     </div>
-    <audio id="player" src="http://m8.music.126.net/20220509001635/fa70c831a5d27f43fabe40fbf0f865fe/ymusic/abd5/5f7f/a70a/6546cdba350cd5cbc7dfe160ae756818.mp3"></audio>
+    <audio id="player" src="MP3/476677.mp3"></audio>
   </div>
 </template>
 

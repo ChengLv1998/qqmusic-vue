@@ -10,99 +10,20 @@
       </div>
     </div>
     <div class="bottom">
-      <div class="box-item">
-        <div class="item">
+      <div class="box-item" v-for="(item,index) in bottomList" :key="'s'+index">
+        <div class="item" v-for="(i,index) in item.itemList" :key="'p'+index">
           <div class="bottom-left">
-            <img :src="picture" alt="" />
+            <img :src="i.picture" alt="" />
             <div class="text">
               <div class="text-top">
-                <span class="name">{{ name }}</span>
-                <span class="fa" :class="icon3"></span>
+                <span class="name">{{ i.name }}</span>
+                <span class="fa" :class="i.icon3"></span>
               </div>
-              <div class="text-bottom">{{ textName }}</div>
+              <div class="text-bottom">{{ i.textName }}</div>
             </div>
           </div>
           <div class="bottom-right">
-            <span class="fa" :class="icon4"></span>
-          </div>
-        </div>
-        <div class="item">
-          <div class="bottom-left">
-            <img :src="picture" alt="" />
-            <div class="text">
-              <div class="text-top">
-                <span class="name">{{ name }}</span>
-                <span class="fa" :class="icon3"></span>
-              </div>
-              <div class="text-bottom">{{ textName }}</div>
-            </div>
-          </div>
-          <div class="bottom-right">
-            <span class="fa" :class="icon4"></span>
-          </div>
-        </div>
-      </div>
-      <div class="box-item">
-        <div class="item">
-          <div class="bottom-left">
-            <img :src="picture" alt="" />
-            <div class="text">
-              <div class="text-top">
-                <span class="name">{{ name }}</span>
-                <span class="fa" :class="icon3"></span>
-              </div>
-              <div class="text-bottom">{{ textName }}</div>
-            </div>
-          </div>
-          <div class="bottom-right">
-            <span class="fa" :class="icon4"></span>
-          </div>
-        </div>
-        <div class="item">
-          <div class="bottom-left">
-            <img :src="picture" alt="" />
-            <div class="text">
-              <div class="text-top">
-                <span class="name">{{ name }}</span>
-                <span class="fa" :class="icon3"></span>
-              </div>
-              <div class="text-bottom">{{ textName }}</div>
-            </div>
-          </div>
-          <div class="bottom-right">
-            <span class="fa" :class="icon4"></span>
-          </div>
-        </div>
-      </div>
-      <div class="box-item">
-        <div class="item">
-          <div class="bottom-left">
-            <img :src="picture" alt="" />
-            <div class="text">
-              <div class="text-top">
-                <span class="name">{{ name }}</span>
-                <span class="fa" :class="icon3"></span>
-              </div>
-              <div class="text-bottom">{{ textName }}</div>
-            </div>
-          </div>
-          <div class="bottom-right">
-            <span class="fa" :class="icon4"></span>
-          </div>
-        </div>
-        <div class="item">
-          <div class="bottom-left">
-            <img :src="picture" alt="" />
-            <div class="text">
-              <div class="text-top">
-                <span class="name">{{ name }}</span>
-                <span class="fa" :class="icon3"></span>
-              </div>
-              <div class="text-bottom">{{ textName }}</div>
-            </div>
-          </div>
-          <div class="bottom-right">
-            <span class="fa" :class="icon4"></span>
+            <span class="fa" :class="i.icon4"></span>
           </div>
         </div>
       </div>
@@ -125,26 +46,23 @@ export default {
       type: String,
       default: 'fa-ellipsis-h',
     },
-    icon3: {
-      type: String,
-      default: 'fa-heart-o',
+    bottomList:{
+      type:Array,
+      default() {
+        return [
+          {
+            itemList:[
+              {icon3:'fa-heart-o'},
+              {icon4:'fa-youtube-play'},
+              {picture:'../picture/9.webp'},
+              {textName:'陈奕迅-黑白灰'},
+              {name:'十年'}
+            ]
+          }
+        ]
+      }
     },
-    icon4: {
-      type: String,
-      default: 'fa-youtube-play',
-    },
-    picture: {
-      type: String,
-      default: '../picture/9.webp',
-    },
-    textName: {
-      type: String,
-      default: '陈奕迅-黑白灰',
-    },
-    name: {
-      type: String,
-      default: '十年',
-    },
+    
   },
 };
 </script>

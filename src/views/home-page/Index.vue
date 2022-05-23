@@ -13,10 +13,7 @@
         :listen="allPeople.listen"
         :icon1="allPeople.icon1"
         :icon2="allPeople.icon2"
-        :icon3="allPeople.icon3"
-        :icon4="allPeople.icon4"
-        :picture="allPeople.picture"
-        :textName="allPeople.textName"
+        :bottomList="allPeople.bottomList"
       ></EveryMusic>
       <List :list="list"></List>
     </div>
@@ -124,11 +121,74 @@ export default {
         listen: '大家都在听',
         icon1: 'fa-play-circle',
         icon2: 'fa-ellipsis-h',
-        icon3: 'fa-heart-o',
-        icon4: 'fa-youtube-play',
-        picture: '../picture/9.webp',
-        textName: '陈奕迅-黑白灰',
-        name: '十年',
+        bottomList: [
+          {
+            itemList: [
+              {
+                icon3: 'fa-heart-o',
+                icon4: 'fa-youtube-play',
+                picture: '../picture/9.webp',
+                textName: '陈奕迅-黑白灰',
+                name: '十年',
+              },
+            ],
+          },
+          {
+            itemList: [
+              {
+                icon3: 'fa-heart-o',
+                icon4: 'fa-youtube-play',
+                picture: '../picture/10.webp',
+                textName: '刘若英-年华',
+                name: '成全',
+              },
+            ],
+          },
+          {
+            itemList: [
+              {
+                icon3: 'fa-heart-o',
+                icon4: 'fa-youtube-play',
+                picture: '../picture/11.webp',
+                textName: '朴树-猎户星座',
+                name: '平凡之路',
+              },
+            ],
+          },
+          {
+            itemList: [
+              {
+                icon3: 'fa-heart-o',
+                icon4: 'fa-youtube-play',
+                picture: '../picture/12.webp',
+                textName: '张芸京-破天荒',
+                name: '偏爱',
+              },
+            ],
+          },
+          {
+            itemList: [
+              {
+                icon3: 'fa-heart-o',
+                icon4: 'fa-youtube-play',
+                picture: '../picture/16.jpg',
+                textName: '安琥-天使的翅膀',
+                name: '天使的翅膀',
+              },
+            ],
+          },
+          {
+            itemList: [
+              {
+                icon3: 'fa-heart-o',
+                icon4: 'fa-youtube-play',
+                picture: '../picture/17.jpg',
+                textName: '林俊杰-JJ陆',
+                name: '我还想她',
+              },
+            ],
+          },
+        ],
       },
       list: [
         {

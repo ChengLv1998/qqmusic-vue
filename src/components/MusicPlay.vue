@@ -6,10 +6,11 @@
       <span>{{ music }}</span>
     </div>
     <div class="right">
-      <i class="fa fa-play-circle-o" @click="play"></i>
+      <i class="fa fa-play-circle-o" @click="play" v-show="!isShow"></i>
+      <i class="fa fa-pause" @click="play" v-show="isShow"></i>
       <i class="fa fa-bars"></i>
     </div>
-    <audio id="player" src="MP3/476677.mp3"></audio>
+    <audio id="player" src="mp3/476677.mp3"></audio>
   </div>
 </template>
 
@@ -33,6 +34,7 @@ export default {
     return {
       audio: null,
       playing: false,
+      isShow:false,
     }
   },
   mounted() {
@@ -40,6 +42,7 @@ export default {
   },
   methods: {
     play() {
+      this.isShow=!this.isShow
       if (this.playing) {
         // 暂停
         this.playing = false;

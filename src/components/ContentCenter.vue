@@ -36,7 +36,7 @@ export default {
   width: 375px;
   overflow: auto;
   .item {
-    margin-right: 10px;
+    margin-left: 10px;
   }
   &::-webkit-scrollbar {
     display: none;

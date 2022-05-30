@@ -1,6 +1,6 @@
 <template>
   <div class="other-items">
-    <div class="item" v-for="(item, index) in List" :key="'f' + index">
+    <div class="item" v-for="(item, index) in list" :key="'f' + index">
       <div class="item-top">
         <div class="item-play">
           {{ item.name }}
@@ -27,7 +27,7 @@
 <script>
 export default {
   props: {
-    List: {
+    list: {
       type: Array,
       default: function () {
         return [

@@ -1,6 +1,6 @@
 <template>
   <div class="center">
-    <div class="item" v-for="(item, index) in List" :key="'f' + index">
+    <div class="item" v-for="(item, index) in list" :key="'f' + index">
       <div class="item-top">
         <div class="item-play">
           {{ item.name }}
@@ -28,17 +28,10 @@ export default {
       type: String,
       default: 'fa-ellipsis-h',
     },
-    List: {
+    list: {
       type: Array,
       default: function () {
         return [
-          {
-            name: 'AI歌单',
-            itemPictureList: [
-              { picture: '../picture/7.webp', pictureTitle: '已播歌曲' },
-              { picture: '../picture/8.webp', pictureTitle: '排行榜：热歌榜' },
-            ],
-          },
           {
             name: 'AI歌单',
             itemPictureList: [

@@ -2,12 +2,14 @@
   <div class="top-box">
     <div class="top-bar">
       <div class="title-box">
-        <div class="top-menu" v-for="item in topMenuBar" :key="item.topMenu">
+        <div class="top-menu" v-for="item in topMenuBar" :key="item.title" @click="jumpTitle">
           {{ item.title }}
         </div>
       </div>
     </div>
-    <span class="fa fa-bars"></span>
+    <div class="icon">
+      <span v-for="i in topIcon" :key="i.icon" class="fa" :class="i.icon"></span>
+    </div>
   </div>
 </template>
 
@@ -24,6 +26,21 @@ export default {
         ];
       },
     },
+    topIcon: {
+      type: Array,
+      default: function () {
+        return [
+          {
+            icon: 'fa-reorder',
+          },
+        ];
+      },
+    },
+  },
+  methods: {
+    jumpTitle() {
+      
+    }
   },
 };
 </script>
@@ -33,20 +50,26 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin:  10px;
+  margin: 0 10px;
   height: 40px;
   .top-bar {
-    width: 360px;
     overflow: scroll;
+    margin-right: 10px;
     .title-box {
-      display: flex;
-      width: 990px;
+      display: flex;     
       .top-menu {
         margin-right: 10px;
+        flex-shrink: 0;
       }
     }
     &::-webkit-scrollbar {
       display: none;
+    }
+  }
+  .icon {
+    display: flex;
+    .fa {
+      margin-left: 20px;
     }
   }
 }

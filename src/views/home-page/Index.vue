@@ -18,17 +18,13 @@
       <List :list="list"></List>
     </div>
     <div class="bottom-menu">
-      <MusicPlay
-        :topCover="play.topCover"
-        :bottomCover="play.bottomCover"
-        :music="play.music"
-      ></MusicPlay>
+      <MusicPlay></MusicPlay>
       <IconText
-        :isShow="true"
         :title="item.title"
         :iconName="item.iconName"
         v-for="(item, index) in barList"
         :key="'b' + index"
+        @jumpTo="jump(item.path)"
       ></IconText>
     </div>
   </div>
@@ -111,11 +107,6 @@ export default {
             typeName: '百万收藏',
           },
         ],
-      },
-      play: {
-        topCover: '../picture/20.jpg',
-        bottomCover: '../picture/21.jpg',
-        music: '日不落-蔡依林',
       },
       allPeople: {
         listen: '大家都在听',
@@ -228,13 +219,19 @@ export default {
         },
       ],
       barList: [
-        { title: '首页', iconName: 'music' },
-        { title: '直播', iconName: 'video-camera' },
-        { title: '视频', iconName: 'toggle-right' },
-        { title: '社区', iconName: 'comment-o' },
-        { title: '我的', iconName: 'user-circle' },
+        { title: '首页', iconName: 'music', path: '/home-page' },
+        { title: '直播', iconName: 'video-camera', path: '/Living' },
+        { title: '视频', iconName: 'toggle-right', path: '/MV' },
+        { title: '社区', iconName: 'comment-o', path: '/community' },
+        { title: '我的', iconName: 'user-circle', path: '/' },
       ],
     };
+  },
+  methods: {
+    jump(path) {
+      console.log('跳转');
+      this.$router.push(path);
+    },
   },
 };
 </script>
@@ -246,7 +243,7 @@ export default {
   height: 667px;
   .mid {
     width: 100%;
-    height: 570px;
+    height: 582px;
     overflow-y: scroll;
     &::-webkit-scrollbar {
       display: none;

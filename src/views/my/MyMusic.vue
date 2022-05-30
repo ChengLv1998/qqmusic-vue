@@ -1,7 +1,7 @@
 <template>
-  <div class="ground">
+  <div class="my">
     <div class="my-box">
-      <div class="my">我的</div>
+      <div class="me">我的</div>
       <div class="other">
         <span>
           <i class="fa fa-leaf"></i>
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="content-box">
-      <input type="text" class="input" placeholder="孤勇者 陈奕迅  正在热搜"/>
+      <input type="text" class="input" placeholder="孤勇者 陈奕迅  正在热搜" />
       <SelfCenter
         v-for="(item, index) in seltCenterLIST"
         :key="'d' + index"
@@ -26,35 +26,34 @@
         @b="mehod2"
       ></SelfCenter>
       <ContentCenter :list="contentList"></ContentCenter>
-      <ItemOthers :List="List"></ItemOthers>
+      <ItemOthers :list="list"></ItemOthers>
     </div>
     <div class="bottom-menu">
-      <MusicPlay :topCover="topCover" :bottomCover="bottomCover" :music="music"></MusicPlay>
+      <MusicPlay></MusicPlay>
       <IconText
-        :isShow="true"
         :title="item.title"
         :iconName="item.iconName"
         v-for="(item, index) in barList"
         :key="'b' + index"
+        @jumpTo="jump(item.path)"
       ></IconText>
-      <!-- <IconText title="视频" iconName="toggle-right"></IconText> -->
     </div>
   </div>
 </template>
 
 <script>
-import IconText from '../components/IconText.vue';
-import SelfCenter from '../components/SelfCenter.vue';
-import ContentCenter from '../components/ContentCenter.vue';
-import ItemOthers from '../components/ItemOthers.vue';
-import MusicPlay from '../components/MusicPlay.vue'
+import SelfCenter from '../../components/SelfCenter.vue';
+import ContentCenter from '../../components/ContentCenter.vue';
+import ItemOthers from '../../components/ItemOthers.vue';
+import IconText from '@/components/IconText.vue';
+import MusicPlay from '@/components/MusicPlay.vue';
 import axios from 'axios';
 export default {
   components: {
-    IconText: IconText,
     SelfCenter,
     ContentCenter,
     ItemOthers: ItemOthers,
+    IconText,
     MusicPlay,
   },
   created() {
@@ -74,7 +73,7 @@ export default {
     axios
       .get('https://autumnfish.cn/song/url?id=38259')
       .then(function (response) {
-        console.log('获取到的单首歌曲信息:',response);
+        console.log('获取到的单首歌曲信息:', response);
       })
       .catch(function (error) {
         console.log(error);
@@ -89,13 +88,6 @@ export default {
   // },
   data() {
     return {
-      barList: [
-        { title: '首页', iconName: 'music' },
-        { title: '直播', iconName: 'video-camera' },
-        { title: '视频', iconName: 'toggle-right' },
-        { title: '社区', iconName: 'comment-o' },
-        { title: '我的', iconName: 'user-circle' },
-      ],
       seltCenterLIST: [
         {
           headPicture: '../picture/1.webp',
@@ -113,8 +105,7 @@ export default {
         { src: '../picture/5.webp', name: '电台', count: '' },
         { src: '../picture/6.webp', name: '已购', count: '' },
       ],
-
-      List: [
+      list: [
         {
           name: '最近播放',
           itemPictureList: [
@@ -149,18 +140,22 @@ export default {
           ],
         },
       ],
-      topCover: '../picture/20.jpg',
-      bottomCover: '../picture/21.jpg',
-      music: '日不落-蔡依林',
+      barList: [
+        { title: '首页', iconName: 'music', path: '/home-page' },
+        { title: '直播', iconName: 'video-camera', path: '/Living' },
+        { title: '视频', iconName: 'toggle-right', path: '/MV' },
+        { title: '社区', iconName: 'comment-o', path: '/community' },
+        { title: '我的', iconName: 'user-circle', path: '/' },
+      ],
     };
   },
   methods: {
     mehod1() {
-      alert('你点了左边')
+      alert('你点了左边');
     },
     mehod2() {
       // alert('你点了右边')
-      this.music = '泡沫-邓紫棋'
+      this.music = '泡沫-邓紫棋';
     },
     // searchMusic:function(){
     //   axios.get('https://autumnfish.cn/search?keywords=this.query')
@@ -170,6 +165,10 @@ export default {
     //     console.log(err)
     //   }
     // }
+    jump(path) {
+      console.log('跳转');
+      this.$router.push(path);
+    },
   },
 };
 </script>
@@ -179,7 +178,7 @@ export default {
   margin: 0;
   padding: 0;
 }
-.ground {
+.my {
   background-color: rgb(233, 238, 232);
   width: 375px;
   height: 667px;
@@ -189,7 +188,7 @@ export default {
     align-items: center;
     width: 100%;
     height: 40px;
-    .my {
+    .me {
       margin-left: 10px;
       font-size: 20px;
     }
@@ -198,7 +197,7 @@ export default {
     }
   }
   .content-box {
-    height: 570px;
+    height: 582px;
     overflow-y: scroll;
     &::-webkit-scrollbar {
       display: none;
@@ -207,7 +206,8 @@ export default {
       width: 80%;
       height: 26px;
       border-radius: 26px;
-      padding-left: 10px;
+      padding: 0 10px;
+      margin-left: 26px;
     }
   }
   .bottom-menu {

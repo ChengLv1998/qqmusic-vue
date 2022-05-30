@@ -1,20 +1,26 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import HomePage from '../views/home-page/Index.vue';
-import QQmusic from '../views/QQmusic.vue';
+import Living from '../views/live-telecast/Living.vue';
+import MyMusic from '../views/my/MyMusic.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'QQmusic',
-    component: QQmusic,
+    name: 'MyMusic',
+    component: MyMusic,
   },
   {
-    path: '/HomePage',
+    path: '/home-page',
     name: 'HomePage',
     component: HomePage,
+  },
+  {
+    path: '/Living',
+    name: 'Living',
+    component: Living,
   },
 
 ];

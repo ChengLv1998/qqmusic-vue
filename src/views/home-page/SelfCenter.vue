@@ -11,7 +11,7 @@
         <span>></span>
       </div>
     </div>
-    <div class="bottom">
+    <div class="box">
       <div class="item" v-for="(item, index) in typeCoverList" :key="'a' + index">
         <div class="typeCover"><img :src="item.typeCover" alt="" /></div>
         <div class="typeName">{{ item.typeName }}</div>
@@ -75,7 +75,7 @@ export default {
       }
     }
   }
-  .bottom {
+  .box {
     display: flex;
     overflow-x: auto;
     &::-webkit-scrollbar {

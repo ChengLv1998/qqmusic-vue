@@ -9,20 +9,20 @@
         <span class="fa" :class="icon2"></span>
       </div>
     </div>
-    <div class="bottom">
+    <div class="box">
       <div class="box-item" v-for="(item,index) in bottomList" :key="'s'+index">
         <div class="item" v-for="(i,index) in item.itemList" :key="'p'+index">
-          <div class="bottom-left">
+          <div class="box-left">
             <img :src="i.picture" alt="" />
             <div class="text">
               <div class="text-top">
                 <span class="name">{{ i.name }}</span>
                 <span class="fa" :class="i.icon3"></span>
               </div>
-              <div class="text-bottom">{{ i.textName }}</div>
+              <div class="text-box">{{ i.textName }}</div>
             </div>
           </div>
-          <div class="bottom-right">
+          <div class="box-right">
             <span class="fa" :class="i.icon4"></span>
           </div>
         </div>
@@ -82,7 +82,7 @@ export default {
       }
     }
   }
-  .bottom {
+  .box {
     overflow-x: auto;
     height: 150px;
     &::-webkit-scrollbar {
@@ -95,8 +95,8 @@ export default {
         justify-content: space-between;
         align-items: center;
         font-size: 14px;
-        margin-bottom: 10px;
-        .bottom-left {
+        margin-box: 10px;
+        .box-left {
           display: flex;
           align-items: center;
           img {

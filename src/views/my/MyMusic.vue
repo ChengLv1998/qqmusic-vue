@@ -28,15 +28,9 @@
       <ContentCenter :list="contentList"></ContentCenter>
       <ItemOthers :list="list"></ItemOthers>
     </div>
-    <div class="bottom-menu">
-      <MusicPlay></MusicPlay>
-      <IconText
-        :title="item.title"
-        :iconName="item.iconName"
-        v-for="(item, index) in barList"
-        :key="'b' + index"
-        @jumpTo="jump(item.path)"
-      ></IconText>
+    <div class="bottom-bar">
+      <MusicPlay class="player"></MusicPlay>
+      <IconText></IconText>
     </div>
   </div>
 </template>
@@ -140,13 +134,7 @@ export default {
           ],
         },
       ],
-      barList: [
-        { title: '首页', iconName: 'music', path: '/home-page' },
-        { title: '直播', iconName: 'video-camera', path: '/Living' },
-        { title: '视频', iconName: 'toggle-right', path: '/MV' },
-        { title: '社区', iconName: 'comment-o', path: '/community' },
-        { title: '我的', iconName: 'user-circle', path: '/' },
-      ],
+      
     };
   },
   methods: {
@@ -210,10 +198,13 @@ export default {
       margin-left: 26px;
     }
   }
-  .bottom-menu {
+  .bottom-bar {
     position: relative;
-    display: flex;
-    justify-content: space-around;
+    .player {
+      position: absolute;
+      top: -40px;
+      left: 20px;
+    }
   }
 }
 </style>

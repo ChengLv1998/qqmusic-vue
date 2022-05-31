@@ -3,15 +3,9 @@
     <TopBar :topMenuBar="topMenuBar" :topIcon="topIcon"></TopBar>
     <ClassBar :classBar="classBar"></ClassBar>
     <ClassBox :classBox="classBox"></ClassBox>
-    <div class="bottom-menu">
-      <MusicPlay></MusicPlay>
-      <IconText
-        :title="item.title"
-        :iconName="item.iconName"
-        v-for="(item, index) in barList"
-        :key="'b' + index"
-        @jumpTo="jump(item.path)"
-      ></IconText>
+    <div class="bottom-bar">
+      <MusicPlay class="player"></MusicPlay>
+      <IconText></IconText>
     </div>
   </div>
 </template>
@@ -53,20 +47,7 @@ export default {
         { cover: 'picture/20.jpg', nickname: '皮八万', playCount: '2.8万' },
         { cover: 'picture/21.jpg', nickname: '洛枳', playCount: '3.3万' },
       ],
-      barList: [
-        { title: '首页', iconName: 'music', path: '/home-page' },
-        { title: '直播', iconName: 'video-camera', path: '/Living' },
-        { title: '视频', iconName: 'toggle-right', path: '/MV' },
-        { title: '社区', iconName: 'comment-o', path: '/community' },
-        { title: '我的', iconName: 'user-circle', path: '/' },
-      ],
     };
-  },
-  methods: {
-    jump(path) {
-      // console.log('跳转');
-      this.$router.push(path);
-    },
   },
 };
 </script>
@@ -76,10 +57,13 @@ export default {
   background-color: rgb(233, 238, 232);
   width: 375px;
   height: 667px;
-  .bottom-menu {
+  .bottom-bar {
     position: relative;
-    display: flex;
-    justify-content: space-around;
+    .player {
+      position: absolute;
+      top: -40px;
+      left: 20px;
+    }
   }
 }
 </style>

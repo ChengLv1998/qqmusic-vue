@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Community from '../views/community/Community.vue';
 import HomePage from '../views/home-page/Index.vue';
 import Living from '../views/live-telecast/Living.vue';
 import MyMusic from '../views/my/MyMusic.vue';
@@ -13,7 +14,7 @@ const routes = [
     component: MyMusic,
   },
   {
-    path: '/home-page',
+    path: '/HomePage',
     name: 'HomePage',
     component: HomePage,
   },
@@ -21,6 +22,11 @@ const routes = [
     path: '/Living',
     name: 'Living',
     component: Living,
+  },
+  {
+    path: '/community',
+    name: 'Community',
+    component: Community,
   },
 
 ];

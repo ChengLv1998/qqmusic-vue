@@ -36,7 +36,7 @@ export default {
     .input {
       height: 26px;
       border-radius: 26px;
-      min-width: 270px;
+      min-width: 290px;
       padding-left: 26px;
     }
     .fa-search {

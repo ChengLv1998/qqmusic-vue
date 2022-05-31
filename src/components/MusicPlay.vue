@@ -65,9 +65,6 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  position: absolute;
-  top: -40px;
   margin: auto;
   width: 90%;
   height: 40px;
